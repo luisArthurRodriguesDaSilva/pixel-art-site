@@ -66,7 +66,7 @@ const create_square = (size_of_canva) =>{
             k+=1;
                 const createLi = document.createElement('div');
                 createLi.style.height = (screen.availWidth*0.7)/size_of_canva + 'px';
-                createLi.style.width = (screen.availWidth*0.7 + size_of_canva*4)+ 'px';
+                //createLi.style.width = (screen.availWidth*0.7 + size_of_canva*4)+ 'px';
                 createLi.classList.add('lik');
                 caixona.appendChild(createLi);
         }
