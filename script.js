@@ -65,15 +65,19 @@ const create_square = (size_of_canva) =>{
         if(i%size_of_canva == 0 || i==0){
             k+=1;
                 const createLi = document.createElement('div');
+                createLi.style.height = (window.innerHeight - 100)/size_of_canva + 'px';
+                createLi.style.width = (window.innerHeight - 100 + 2*size_of_canva)+ 'px';
                 createLi.classList.add('lik');
                 caixona.appendChild(createLi);
         }
         let li_atual = document.querySelectorAll('.lik')[k-1];
         const createDiv = document.createElement('div');
         createDiv.classList.add('pixel');
+        createDiv.style.height = (window.innerHeight - 100 )/size_of_canva + 'px';
+        createDiv.style.width =  createDiv.style.height;
         li_atual.appendChild(createDiv);
-        
-    }}
+    }
+}
 
 
 
@@ -82,14 +86,11 @@ addColorToPalet();
 create_square(5);
 
 const Selecting = (e) => {
-    console.log(e.target.parentNode.children)
     for (let i of e.target.parentNode.children){
-        console.log(i);
         i.classList.remove('selected')
     }
     e.target.classList.add('selected');
     selected_color = parseInt(e.target.id);
-    console.log(selected_color)
 }
 
 for (let i of paletColors){
@@ -101,33 +102,43 @@ const colorizing = (e) =>{
 }
 
 
-const allPixels = document.querySelectorAll('.pixel');
 
-const colorizingAll = () =>{
-   for(let i of document.querySelectorAll('.pixel')){i.style.background=colorsOfPallete[selected_color];}
+const colorizingAll = (e) =>{
+   for(let i of document.querySelectorAll('.pixel')){
+       i.style.background=colorsOfPallete[selected_color];
+       e.preventDefault();}
 }
 
 
-
-for (let i of document.querySelectorAll('.pixel')){
-    i.addEventListener('click',colorizing)
+const conjuntoEssencial = () =>{
+    for (let i of document.querySelectorAll('.pixel')){
+        i.addEventListener('click',colorizing)
+    }
+    
+    for (let i of document.querySelectorAll('.pixel')){
+        i.addEventListener('contextmenu',colorizingAll)
+    }
 }
 
-for (let i of document.querySelectorAll('.pixel')){
-    i.addEventListener('contextmenu',colorizingAll)
-}
+conjuntoEssencial();
 
-document.querySelector('#clear-board').addEventListener('click',()=>{for(let i of document.querySelectorAll('.pixel')){ console.log('apareci');i.style.background= '#ffffff';}});
+
+document.querySelector('#clear-board').addEventListener('click',()=>{
+    for(let i of document.querySelectorAll('.pixel'))
+    { 
+    i.style.background= '#ffffff';
+}
+});
 
 const changeSizeCanva = (newSize) =>{
     for(let i of document.querySelectorAll('.lik')){i.parentNode.removeChild(i)}
     create_square(newSize);
+    conjuntoEssencial();
     
 }
 
 const btnVqv = document.querySelector('#generate-board');
 btnVqv.addEventListener('click',()=>{
-    console.log('vqv');
     size_of_canva=document.querySelector('#board-size').value;
     if(size_of_canva == '') alert('Board inválido!');
     if(size_of_canva > 50) size_of_canva = 50;

@@ -11,18 +11,24 @@ body{
 #color-palette{
     display: flex;
 }
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+    
+}
 
 #pixel-board{
     border: solid black 1px;
-    display: inline-block;
+    display: inline;
     flex-direction: column;
     padding: 0%;
     margin: 0%;
+    width: min-content;
 }
 
 .pixel{
-    width: 40px;
-    height: 40px;
     display: inline-block;
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
@@ -34,5 +40,6 @@ body{
 .lik{
     margin: 0%;
     padding: 0%;
-    height: 40px;
+
+    width: auto;
     }
