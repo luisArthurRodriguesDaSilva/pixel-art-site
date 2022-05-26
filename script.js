@@ -57,6 +57,8 @@ const addColorToPalet = () =>{
     colorsOfPallete[0] = 'black';
     paletColors[0].style.background = 'black';
     paletColors[0].classList.add('selected');
+    colorsOfPallete[1] = 'white';
+    paletColors[1].style.background = '#ffffff';
 }
 
 const create_square = (size_of_canva) =>{
@@ -149,8 +151,6 @@ const btnVqv = document.querySelector('#generate-board');
 btnVqv.addEventListener('click',()=>{
     size_of_canva=document.querySelector('#board-size').value;
     if(size_of_canva == '') alert('Board inválido!');
-    if(size_of_canva > 50) size_of_canva = 50;
-    if(size_of_canva < 5) size_of_canva = 5;
     changeSizeCanva(size_of_canva);
     for (let k of document.querySelectorAll('.pixel')){
         k.addEventListener('click',colorizing)
