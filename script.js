@@ -43,6 +43,7 @@ let colorsOfPallete = []
 let selected_color = 0;
 const pixelBoard = document.querySelector('#pixel-board');
 const paletColors = document.querySelectorAll('.color');
+var intervalo;
 
 
 const addColorToPalet = () =>{
@@ -98,6 +99,7 @@ for (let i of paletColors){
 }
 
 const colorizing = (e) =>{
+    
     e.target.style.background = colorsOfPallete[selected_color];
 }
 
@@ -111,8 +113,14 @@ const colorizingAll = (e) =>{
 
 
 const conjuntoEssencial = () =>{
-    for (let i of document.querySelectorAll('.pixel')){
+    /*for (let i of document.querySelectorAll('.pixel')){
         i.addEventListener('click',colorizing)
+    }*/
+    for (let i of document.querySelectorAll('.pixel')){
+        i.addEventListener('mouseleave',(e)=>{
+            console.log(e.buttons)
+            if (e.buttons == 1){colorizing(e)}
+        })
     }
     
     for (let i of document.querySelectorAll('.pixel')){
