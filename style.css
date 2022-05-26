@@ -1,0 +1,38 @@
+body{
+    display:flex ;
+    flex-direction: column;
+}
+.color{
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+}
+
+#color-palette{
+    display: flex;
+}
+
+#pixel-board{
+    border: solid black 1px;
+    display: inline-block;
+    flex-direction: column;
+    padding: 0%;
+    margin: 0%;
+}
+
+.pixel{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.lik{
+    margin: 0%;
+    padding: 0%;
+    height: 40px;
+    }
