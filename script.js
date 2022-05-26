@@ -65,15 +65,15 @@ const create_square = (size_of_canva) =>{
         if(i%size_of_canva == 0 || i==0){
             k+=1;
                 const createLi = document.createElement('div');
-                createLi.style.height = (window.innerHeight - 100)/size_of_canva + 'px';
-                createLi.style.width = (window.innerHeight - 100 + 2*size_of_canva)+ 'px';
+                createLi.style.height = (screen.availWidth*0.7)/size_of_canva + 'px';
+                createLi.style.width = (screen.availWidth*0.7 + size_of_canva*4)+ 'px';
                 createLi.classList.add('lik');
                 caixona.appendChild(createLi);
         }
         let li_atual = document.querySelectorAll('.lik')[k-1];
         const createDiv = document.createElement('div');
         createDiv.classList.add('pixel');
-        createDiv.style.height = (window.innerHeight - 100 )/size_of_canva + 'px';
+        createDiv.style.height = (screen.availWidth*0.7)/size_of_canva + 'px';
         createDiv.style.width =  createDiv.style.height;
         li_atual.appendChild(createDiv);
     }
