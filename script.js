@@ -39,6 +39,7 @@ const colors = [
     "#d3277a", "#2ca1ae", "#9685eb", "#8a96c6", "#dba2e6", "#76fc1b", "#608fa4",
     "#20f6ba", "#07d7f6", "#dce77a", "#77ecca" 
 ]
+const caixona = document.querySelector('#pixel-board');
 let colorsOfPallete = []
 let selected_color = 0;
 const pixelBoard = document.querySelector('#pixel-board');
@@ -70,7 +71,6 @@ const addColorToPalet = (sizeOfPallet) =>{
 
 const create_square = (size_of_canva) =>{
     var k = 0;
-    const caixona = document.querySelector('#pixel-board');
     for (let i = 0;i<size_of_canva**2;i+=1){
         if(i%size_of_canva == 0 || i==0){
             k+=1;
@@ -86,7 +86,6 @@ const create_square = (size_of_canva) =>{
         createDiv.id='linhado'
         createDiv.style.height = (screen.availWidth*0.5)/size_of_canva + 'px';
         createDiv.style.width =  createDiv.style.height;
-        caixona.style.paddingBottom = 3 + 'px';
         li_atual.appendChild(createDiv);
     }
 }
@@ -205,6 +204,7 @@ if(localStorage.getItem('darkmode') == 'true'){
     dls.style.color = 'white';
     titl.style.color = dls.style.color;
     document.querySelector('#pixel-board').style.border = '1px solid white';
+    caixona.style.paddingBottom = 3 + 'px';
         
 
     changeBackgrounds(gradient);
@@ -221,7 +221,7 @@ const changeDarkLightMode = (e) =>{
         dls.style.color = 'black';
         titl.style.color = dls.style.color;
         document.querySelector('#pixel-board').style.border = '1px solid black';
-        
+        caixona.style.paddingBottom = 0 + 'px';
         localStorage.setItem('darkmode',false);
     }
     else {
@@ -229,6 +229,7 @@ const changeDarkLightMode = (e) =>{
         changeBackgrounds('black');
         dls.style.color = 'white';
         titl.style.color = dls.style.color;
+        caixona.style.paddingBottom = 3 + 'px';
 
         document.querySelector('#pixel-board').style.border = '1px solid white';
         
