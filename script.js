@@ -168,11 +168,13 @@ btnVqv.addEventListener('click',()=>{
 document.querySelector('#clear-lines').addEventListener('click',()=>{
     let pixels = document.querySelectorAll('.pixel');
     if (pixels[1].id == 'deslinhado'){
+        if(localStorage.getItem('darkmode') == 'true'){caixona.style.paddingBottom = 3 + 'px';}
         for(let i of pixels){
             i.id = 'linhado'
         }
     }
     else{
+        if(localStorage.getItem('darkmode') == 'true'){caixona.style.paddingBottom = 0 + 'px';}
         for(let i of pixels){
             i.id = 'deslinhado'
         }
