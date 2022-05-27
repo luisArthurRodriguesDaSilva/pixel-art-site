@@ -32,9 +32,14 @@ body{
 .pixel{
     display: inline-block;
     background-color: rgb(255, 255, 255);
-    border: 1px solid black;
     margin: 0px;
     padding: 0px;
+}
+#linhado{
+    border: 1px solid black;
+}
+#deslinhado{
+    border: none;
 }
 
 

@@ -83,6 +83,7 @@ const create_square = (size_of_canva) =>{
         let li_atual = document.querySelectorAll('.lik')[k-1];
         const createDiv = document.createElement('div');
         createDiv.classList.add('pixel');
+        createDiv.id='linhado'
         createDiv.style.height = (screen.availWidth*0.5)/size_of_canva + 'px';
         createDiv.style.width =  createDiv.style.height;
         li_atual.appendChild(createDiv);
@@ -164,8 +165,16 @@ btnVqv.addEventListener('click',()=>{
     }
 })
 
-/*document.querySelector('#clear-lines').addEventListener('click',()=>{
+document.querySelector('#clear-lines').addEventListener('click',()=>{
     let pixels = document.querySelectorAll('.pixel');
-    console.log(pixels[0].style.border);
-    //if (pixels[1].style.border){}
-})*/
+    if (pixels[1].id == 'deslinhado'){
+        for(let i of pixels){
+            i.id = 'linhado'
+        }
+    }
+    else{
+        for(let i of pixels){
+            i.id = 'deslinhado'
+        }
+    }
+})
