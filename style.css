@@ -1,16 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-
+*{  font-family: 'Press Start 2P', cursive;}
 
 body{
+    zoom: 70%;
     display:flex ;
     flex-direction: column;
-    gap: 1vh;
+    gap: 3vh;
     transition: all 0.7s;
 }
 
-#title{
-    font-family: 'Press Start 2P', cursive;
+header{
+    display: flex;
+    gap :10vw;
 }
 
 .color{
@@ -33,10 +35,8 @@ body{
 #pixel-board{
     display: inline;
     flex-direction: column;
-    padding: 0%;
     margin: 0%;
     width: min-content;
-    padding-bottom: 3px solid white;
 
 }
 
@@ -81,6 +81,8 @@ body{
 
 .part button{
     background-color:aliceblue;
-    border: 3px solid #000000;
-     border-radius:5px ;
+    padding: 3px solid #000000;
+    border: 3px solid #ffffff;;
+    border-radius:5px ;
+    height: 5vh;
 }

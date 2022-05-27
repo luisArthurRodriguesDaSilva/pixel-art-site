@@ -86,6 +86,7 @@ const create_square = (size_of_canva) =>{
         createDiv.id='linhado'
         createDiv.style.height = (screen.availWidth*0.5)/size_of_canva + 'px';
         createDiv.style.width =  createDiv.style.height;
+        caixona.style.paddingBottom = 3 + 'px';
         li_atual.appendChild(createDiv);
     }
 }
