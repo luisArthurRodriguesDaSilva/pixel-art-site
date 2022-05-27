@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+
 body{
     display:flex ;
     flex-direction: column;
     gap: 1vh;
 }
+
+#title{
+    font-family: 'Press Start 2P', cursive;
+}
+
 .color{
     border: 1px solid black;
     width: 5vw;
