@@ -6,6 +6,7 @@ body{
     display:flex ;
     flex-direction: column;
     gap: 1vh;
+    transition: all 0.7s;
 }
 
 #title{
@@ -30,12 +31,13 @@ body{
 }
 
 #pixel-board{
-    border: solid black 1px;
     display: inline;
     flex-direction: column;
     padding: 0%;
     margin: 0%;
     width: min-content;
+    padding-bottom: 3px solid white;
+
 }
 
 .pixel{
@@ -43,6 +45,10 @@ body{
     background-color: rgb(255, 255, 255);
     margin: 0px;
     padding: 0px;
+}
+
+.claro{
+    border: white;
 }
 #linhado{
     border: 1px solid black;
@@ -59,3 +65,22 @@ body{
     border: 0%;
     width: auto;
     }
+
+#dark-light{
+  height: 40px;
+  width: 40px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: #c0e4e42f;
+  border: 3px solid #dbe4ed;
+  border-radius:10px ;
+  transition: all 0.7s;
+  margin-left: 5vw;
+}
+
+.part button{
+    background-color:aliceblue;
+    border: 3px solid #000000;
+     border-radius:5px ;
+}
