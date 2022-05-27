@@ -211,6 +211,10 @@ if(localStorage.getItem('darkmode') == 'true'){
 
     changeBackgrounds(gradient);
 }
+else  {
+    caixona.style.paddingBottom = 0 + 'px';
+    document.querySelector('#pixel-board').style.border = '1px solid black';
+}
 
 const changeDarkLightMode = (e) =>{
     console.log('passei');
@@ -231,7 +235,7 @@ const changeDarkLightMode = (e) =>{
         changeBackgrounds('black');
         dls.style.color = 'white';
         titl.style.color = dls.style.color;
-        caixona.style.paddingBottom = 3 + 'px';
+        if(document.querySelectorAll('.pixel')[1].id == 'linhado')caixona.style.paddingBottom = 3 + 'px';
 
         document.querySelector('#pixel-board').style.border = '1px solid white';
         
