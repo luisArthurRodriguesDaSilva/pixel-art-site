@@ -1,17 +1,18 @@
 body{
     display:flex ;
     flex-direction: column;
+    gap: 1vh;
 }
 .color{
     border: 1px solid black;
-    width: 40px;
-    height: 40px;
+    width: 5vw;
+    height: 5vw;
 }
 
 #color-palette{
     display: flex;
 }
-main {
+.part{
     display: flex;
     flex-direction: row;
     align-items: center;

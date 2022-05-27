@@ -42,11 +42,18 @@ const colors = [
 let colorsOfPallete = []
 let selected_color = 0;
 const pixelBoard = document.querySelector('#pixel-board');
-const paletColors = document.querySelectorAll('.color');
-var intervalo;
+const paletaDiv = document.querySelector('#color-palette');
 
-
-const addColorToPalet = () =>{
+const addColorToPalet = (sizeOfPallet) =>{
+    for(let i =0 ; i< sizeOfPallet;i+=1){
+        const createColorOfPallet = document.createElement('div');
+        createColorOfPallet.classList.add('color');
+        createColorOfPallet.id=(i);
+        createColorOfPallet.style.width=(screen.availWidth*0.9)/sizeOfPallet + 'px';
+        createColorOfPallet.style.height = createColorOfPallet.style.width;
+        paletaDiv.appendChild(createColorOfPallet);
+    }
+    let paletColors = document.querySelectorAll('.color');
     let k = 0;
     for(let i of paletColors){
         let MomentColor = colors[Math.floor(Math.random()*colors.length)];
@@ -68,7 +75,7 @@ const create_square = (size_of_canva) =>{
         if(i%size_of_canva == 0 || i==0){
             k+=1;
                 const createLi = document.createElement('div');
-                createLi.style.height = (screen.availWidth*0.7)/size_of_canva + 'px';
+                createLi.style.height = (screen.availWidth*0.5)/size_of_canva + 'px';
                 //createLi.style.width = (screen.availWidth*0.7 + size_of_canva*4)+ 'px';
                 createLi.classList.add('lik');
                 caixona.appendChild(createLi);
@@ -76,7 +83,7 @@ const create_square = (size_of_canva) =>{
         let li_atual = document.querySelectorAll('.lik')[k-1];
         const createDiv = document.createElement('div');
         createDiv.classList.add('pixel');
-        createDiv.style.height = (screen.availWidth*0.7)/size_of_canva + 'px';
+        createDiv.style.height = (screen.availWidth*0.5)/size_of_canva + 'px';
         createDiv.style.width =  createDiv.style.height;
         li_atual.appendChild(createDiv);
     }
@@ -85,7 +92,7 @@ const create_square = (size_of_canva) =>{
 
 
 
-addColorToPalet();
+addColorToPalet(50);
 create_square(5);
 
 const Selecting = (e) => {
@@ -96,7 +103,7 @@ const Selecting = (e) => {
     selected_color = parseInt(e.target.id);
 }
 
-for (let i of paletColors){
+for (let i of document.querySelectorAll('.color')){
     i.addEventListener('click',Selecting)
 }
 
@@ -115,9 +122,9 @@ const colorizingAll = (e) =>{
 
 
 const conjuntoEssencial = () =>{
-    /*for (let i of document.querySelectorAll('.pixel')){
+    for (let i of document.querySelectorAll('.pixel')){
         i.addEventListener('click',colorizing)
-    }*/
+    }
     for (let i of document.querySelectorAll('.pixel')){
         i.addEventListener('mouseleave',(e)=>{
             console.log(e.buttons)
@@ -156,3 +163,9 @@ btnVqv.addEventListener('click',()=>{
         k.addEventListener('click',colorizing)
     }
 })
+
+/*document.querySelector('#clear-lines').addEventListener('click',()=>{
+    let pixels = document.querySelectorAll('.pixel');
+    console.log(pixels[0].style.border);
+    //if (pixels[1].style.border){}
+})*/
