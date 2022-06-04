@@ -45,6 +45,13 @@ let selected_color = 0;
 const pixelBoard = document.querySelector('#pixel-board');
 const paletaDiv = document.querySelector('#color-palette');
 
+function randomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return `rgb(${r},${g},${b})`;
+}
+
 const addColorToPalet = (sizeOfPallet) =>{
     for(let i =0 ; i< sizeOfPallet;i+=1){
         const createColorOfPallet = document.createElement('div');
@@ -57,7 +64,7 @@ const addColorToPalet = (sizeOfPallet) =>{
     let paletColors = document.querySelectorAll('.color');
     let k = 0;
     for(let i of paletColors){
-        let MomentColor = colors[Math.floor(Math.random()*colors.length)];
+        let MomentColor = randomColor();
         i.style.background = MomentColor;
         colorsOfPallete[k] = MomentColor;
         k+=1;
