@@ -37,6 +37,7 @@ header{
     flex-direction: column;
     margin: 0%;
     width: min-content;
+    border: 1px solid black;
 
 }
 
