@@ -206,6 +206,7 @@ if(localStorage.getItem('darkmode') == 'true'){
     dls.style.color = 'white';
     titl.style.color = dls.style.color;
      //caixona.style.paddingBottom = 3 + 'px';
+     document.querySelector('#pixel-board').style.border = '1px solid white';
 
         
 
