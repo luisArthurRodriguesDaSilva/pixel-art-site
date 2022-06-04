@@ -168,7 +168,7 @@ btnVqv.addEventListener('click',()=>{
 document.querySelector('#clear-lines').addEventListener('click',()=>{
     let pixels = document.querySelectorAll('.pixel');
     if (pixels[1].id == 'deslinhado'){
-        if(localStorage.getItem('darkmode') == 'true'){caixona.style.paddingBottom = 3 + 'px';}
+        //if(localStorage.getItem('darkmode') == 'true'){caixona.style.paddingBottom = 3 + 'px';}
         for(let i of pixels){
             i.id = 'linhado'
         }
@@ -205,15 +205,15 @@ if(localStorage.getItem('darkmode') == 'true'){
     gradient='black';
     dls.style.color = 'white';
     titl.style.color = dls.style.color;
-    document.querySelector('#pixel-board').style.border = '1px solid white';
-    caixona.style.paddingBottom = 3 + 'px';
+     //caixona.style.paddingBottom = 3 + 'px';
+     document.querySelector('#pixel-board').style.border = '1px solid white';
+
         
 
     changeBackgrounds(gradient);
 }
 else  {
     caixona.style.paddingBottom = 0 + 'px';
-    document.querySelector('#pixel-board').style.border = '1px solid black';
 }
 
 const changeDarkLightMode = (e) =>{
@@ -227,15 +227,19 @@ const changeDarkLightMode = (e) =>{
         dls.style.color = 'black';
         titl.style.color = dls.style.color;
         document.querySelector('#pixel-board').style.border = '1px solid black';
+        
         caixona.style.paddingBottom = 0 + 'px';
         localStorage.setItem('darkmode',false);
+
     }
     else {
         dls.innerText =  'dark_mode';
         changeBackgrounds('black');
         dls.style.color = 'white';
+        //for(p of document.querySelectorAll('.pixel')) {p.style.border = '1px solid white';}
+
         titl.style.color = dls.style.color;
-        if(document.querySelectorAll('.pixel')[1].id == 'linhado')caixona.style.paddingBottom = 3 + 'px';
+        //if(document.querySelectorAll('.pixel')[1].id == 'linhado')caixona.style.paddingBottom = 3 + 'px';
 
         document.querySelector('#pixel-board').style.border = '1px solid white';
         
