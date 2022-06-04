@@ -206,6 +206,7 @@ if(localStorage.getItem('darkmode') == 'true'){
     dls.style.color = 'white';
     titl.style.color = dls.style.color;
      //caixona.style.paddingBottom = 3 + 'px';
+
         
 
     changeBackgrounds(gradient);
@@ -235,6 +236,7 @@ const changeDarkLightMode = (e) =>{
         changeBackgrounds('black');
         dls.style.color = 'white';
         //for(p of document.querySelectorAll('.pixel')) {p.style.border = '1px solid white';}
+
         titl.style.color = dls.style.color;
         //if(document.querySelectorAll('.pixel')[1].id == 'linhado')caixona.style.paddingBottom = 3 + 'px';
 
