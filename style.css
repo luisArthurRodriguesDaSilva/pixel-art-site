@@ -16,7 +16,7 @@ header{
 }
 
 .color{
-    border: 1px solid black;
+    border: 1px solid rgb(121, 93, 93);
     width: 5vw;
     height: 5vw;
 }
@@ -53,10 +53,10 @@ header{
     border: white;
 }
 #linhado{
-    border: 1px solid black;
+ border: 1px solid black;
 }
 #deslinhado{
-    border: none;
+    border:none;
 }
 
 

@@ -1,4 +1,4 @@
-//import html2canvas from './node_modules/html2canvas.js';
+//import {html2canvas} from './html2canvas.js';
 
 const caixona = document.querySelector('#pixel-board');
 let colorsOfPallete = [];
@@ -219,3 +219,22 @@ const changeDarkLightMode = (e) =>{
 
 
 darkLight.addEventListener('click',changeDarkLightMode);
+
+function download(source){
+    const fileName = source.split('/').pop();    //furted by the guy who made this function on https://www.codegrepper.com/code-examples/javascript/javascript+download+image+from+url
+	var el = document.createElement("a");
+	el.setAttribute("href", source);
+	el.setAttribute("download", fileName);
+	document.body.appendChild(el);
+ 	el.click();
+	el.remove();
+}
+
+const capture = () =>{
+    html2canvas(document.querySelector('#pixel-board')).then(canvas => {
+        let imgAdress = canvas.toDataURL("image/png",1);
+        download(imgAdress);
+        
+    });
+}
+document.querySelector('#btn-download').addEventListener('click',capture);
