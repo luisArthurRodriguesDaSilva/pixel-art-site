@@ -232,7 +232,7 @@ function download(source){
 
 const capture = () =>{
     html2canvas(document.querySelector('#pixel-board')).then(canvas => {
-        let imgAdress = canvas.toDataURL("image/png",1);
+        let imgAdress = canvas.toDataURL("image/jpeg",1.0);
         download(imgAdress);
         
     });
