@@ -1,5 +1,3 @@
-//import {html2canvas} from './html2canvas.js';
-
 const caixona = document.querySelector('#pixel-board');
 let colorsOfPallete = [];
 let selected_color = 0;
@@ -237,4 +235,5 @@ const capture = () =>{
         
     });
 }
+
 document.querySelector('#btn-download').addEventListener('click',capture);
