@@ -3,7 +3,8 @@ let colorsOfPallete = [];
 let selected_color = 0;
 const pixelBoard = document.querySelector('#pixel-board');
 const paletaDiv = document.querySelector('#color-palette');
-
+const wite =    'linear-gradient( 102.4deg,  rgba(250,250,250,1) 7.8%,  rgba(24,250,255,1) 100.3% )';
+const bac =     'linear-gradient(31deg, rgba(61,116,180,0.9948354341736695) 12%, rgba(3,21,42,1) 39%, rgba(0,0,0,1) 68%, rgba(0,55,148,0.8715861344537815) 84%)';
 function randomColor() {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
@@ -159,16 +160,20 @@ const btsOnPart = document.querySelectorAll('.part button');
 const darkLight = document.querySelector('#dark-light');
 
 const changeBackgrounds = (gradient) =>{
+    
+    bode.style.backgroundImage= '';
     bode.style.backgroundImage= gradient;
-    bode.style.MozBackground = gradient;
-    bode.style.WebkitBackground = gradient;
-    bode.style.background = gradient;
+    console.log(gradient);
+    console.log(bode.style.backgroundImage);
+    //bode.style.MozBackground = gradient;
+    //bode.style.WebkitBackground = gradient;
+    //bode.style.background = gradient;
 }
 
 if(localStorage.getItem('darkmode') == 'true'){
 
     dls.innerText =  'dark_mode';
-    gradient='black';
+    gradient=bac;
     dls.style.color = 'white';
     titl.style.color = dls.style.color;
      //caixona.style.paddingBottom = 3 + 'px';
@@ -189,7 +194,7 @@ const changeDarkLightMode = (e) =>{
 
     if(dls.innerText=='dark_mode') {
         dls.innerText= 'light_mode';
-        changeBackgrounds('white');
+        changeBackgrounds(wite);
         dls.style.color = 'black';
         titl.style.color = dls.style.color;
         document.querySelector('#pixel-board').style.border = '1px solid black';
@@ -200,7 +205,7 @@ const changeDarkLightMode = (e) =>{
     }
     else {
         dls.innerText =  'dark_mode';
-        changeBackgrounds('black');
+        changeBackgrounds(bac);
         dls.style.color = 'white';
         //for(p of document.querySelectorAll('.pixel')) {p.style.border = '1px solid white';}
 
