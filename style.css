@@ -1,17 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-*{  font-family: 'Press Start 2P', cursive;}
+*{  
+
+    -webkit-transition: background-image 2s ease-in-out;
+    transition: background-image 2s ease-in-out; 
+    font-family: 'Press Start 2P', cursive;}
+
+:root{
+    --back : linear-gradient( 102.4deg,  rgba(250,250,250,1) 7.8%,  rgba(24,250,255,1) 100.3% );
+    --letter : black;
+    --transparent : rgba(0,0,0,0);
+    --border: solid var(--letter);
+}
 
 body{
     zoom: 70%;
     display:flex ;
     flex-direction: column;
-    background-image: linear-gradient( 102.4deg,  rgba(250,250,250,1) 7.8%,  rgba(24,250,255,1) 100.3% );
-    gap: 3vh;
-    transition: all 0.7s;
+    background-image: var(--back);
+    gap: 4vh;
+    height: 100%;
     background-size: 400% 400%;
     background-repeat: no-repeat;
     animation: gradient 15s ease infinite;
+    margin: auto 0px;
 }
 
 @keyframes gradient {
@@ -31,6 +43,12 @@ header{
     gap :10vw;
 }
 
+#title{
+    transition: 1s;
+    color: var(--letter);
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
 .color{
     border: 1px solid rgb(121, 93, 93);
     width: 5vw;
@@ -53,23 +71,19 @@ header{
     flex-direction: column;
     margin: 0%;
     width: min-content;
-    border: 1px solid black;
-
+    border: 1px var(--border);
 }
 
-.pixel{
-    display: inline-block;
-    background-color: rgb(255, 255, 255);
+.pixel {
+    transition: all 0.3s;
+    background:  var(--transparent);
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-.claro{
-    border: white;
-}
 #linhado{
- border: 1px solid black;
+ border: 1px var(--border)
 }
 #deslinhado{
     border:none;
@@ -90,17 +104,29 @@ header{
   display: grid;
   align-items: center;
   justify-content: center;
-  background-color: #c0e4e42f;
+  background: #c0e4e42f;
   border: 3px solid #dbe4ed;
   border-radius:10px ;
-  transition: all 0.7s;
+  transition: all 1s;
   margin-left: 5vw;
 }
 
 .part button{
-    background-color:aliceblue;
+    background:var(--transparent);
     padding: 3px solid #000000;
-    border: 3px solid #ffffff;;
+    color: var(--letter);
+    transition: all 2s;
+    border: 3px var(--border);
     border-radius:5px ;
     height: 5vh;
+}
+input{
+    background-color: var(--transparent);
+    max-width: 120px;
+}
+.part button:hover {
+    transition: all 0.2s;
+    background:rgba(209, 230, 161, 0.486);
+    box-shadow:3px 3px 2px rgba(162, 192, 91, 0.685);
+
 }

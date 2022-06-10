@@ -5,7 +5,8 @@ const pixelBoard = document.querySelector('#pixel-board');
 const paletaDiv = document.querySelector('#color-palette');
 const wite =    'linear-gradient( 102.4deg,  rgba(250,250,250,1) 7.8%,  rgba(24,250,255,1) 100.3% )';
 const bac =     'linear-gradient(31deg, rgba(61,116,180,0.9948354341736695) 12%, rgba(3,21,42,1) 39%, rgba(0,0,0,1) 68%, rgba(0,55,148,0.8715861344537815) 84%)';
-function randomColor() {
+
+const randomColor = () => {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
@@ -34,6 +35,8 @@ const addColorToPalet = (sizeOfPallet) =>{
     paletColors[0].classList.add('selected');
     colorsOfPallete[1] = 'white';
     paletColors[1].style.background = '#ffffff';
+    colorsOfPallete[2] = 'rgba(0,0,0,0)';
+    paletColors[2].style.background = 'rgba(0,0,0,0)';
 }
 
 const create_square = (size_of_canva) =>{
@@ -111,7 +114,7 @@ conjuntoEssencial();
 document.querySelector('#clear-board').addEventListener('click',()=>{
     for(let i of document.querySelectorAll('.pixel'))
     { 
-    i.style.background= '#ffffff';
+    i.style.background= 'rgba(0,0,0,0)';
 }
 });
 
@@ -160,14 +163,7 @@ const btsOnPart = document.querySelectorAll('.part button');
 const darkLight = document.querySelector('#dark-light');
 
 const changeBackgrounds = (gradient) =>{
-    
-    bode.style.backgroundImage= '';
-    bode.style.backgroundImage= gradient;
-    console.log(gradient);
-    console.log(bode.style.backgroundImage);
-    //bode.style.MozBackground = gradient;
-    //bode.style.WebkitBackground = gradient;
-    //bode.style.background = gradient;
+    document.documentElement.style.setProperty('--back',gradient);
 }
 
 if(localStorage.getItem('darkmode') == 'true'){
@@ -175,7 +171,7 @@ if(localStorage.getItem('darkmode') == 'true'){
     dls.innerText =  'dark_mode';
     gradient=bac;
     dls.style.color = 'white';
-    titl.style.color = dls.style.color;
+    document.documentElement.style.setProperty('--letter',dls.style.color);
      //caixona.style.paddingBottom = 3 + 'px';
      document.querySelector('#pixel-board').style.border = '1px solid white';
 
@@ -196,7 +192,7 @@ const changeDarkLightMode = (e) =>{
         dls.innerText= 'light_mode';
         changeBackgrounds(wite);
         dls.style.color = 'black';
-        titl.style.color = dls.style.color;
+        document.documentElement.style.setProperty('--letter',dls.style.color);
         document.querySelector('#pixel-board').style.border = '1px solid black';
         
         caixona.style.paddingBottom = 0 + 'px';
@@ -209,7 +205,7 @@ const changeDarkLightMode = (e) =>{
         dls.style.color = 'white';
         //for(p of document.querySelectorAll('.pixel')) {p.style.border = '1px solid white';}
 
-        titl.style.color = dls.style.color;
+        document.documentElement.style.setProperty('--letter',dls.style.color);
         //if(document.querySelectorAll('.pixel')[1].id == 'linhado')caixona.style.paddingBottom = 3 + 'px';
 
         document.querySelector('#pixel-board').style.border = '1px solid white';
