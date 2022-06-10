@@ -173,7 +173,7 @@ if(localStorage.getItem('darkmode') == 'true'){
     dls.style.color = 'white';
     document.documentElement.style.setProperty('--letter',dls.style.color);
 
-    document.documentElement.style.setProperty('--transparent','rgba(250,250,250,0.2)');
+    document.documentElement.style.setProperty('--transparent','rgba(250,250,250,0.1)');
      //caixona.style.paddingBottom = 3 + 'px';
      document.querySelector('#pixel-board').style.border = '1px solid white';
 
@@ -195,7 +195,7 @@ const changeDarkLightMode = (e) =>{
         changeBackgrounds(wite);
         dls.style.color = 'black';
         document.documentElement.style.setProperty('--letter',dls.style.color);
-        document.documentElement.style.setProperty('--transparent','rgba(0,0,0,0.2)');
+        document.documentElement.style.setProperty('--transparent','rgba(0,0,0,0.1)');
         document.querySelector('#pixel-board').style.border = '1px solid black';
         
         caixona.style.paddingBottom = 0 + 'px';
@@ -210,7 +210,7 @@ const changeDarkLightMode = (e) =>{
 
         document.documentElement.style.setProperty('--letter',dls.style.color);
 
-    document.documentElement.style.setProperty('--transparent','rgba(250,250,250,0.2)');
+    document.documentElement.style.setProperty('--transparent','rgba(250,250,250,0.1)');
         //if(document.querySelectorAll('.pixel')[1].id == 'linhado')caixona.style.paddingBottom = 3 + 'px';
 
         document.querySelector('#pixel-board').style.border = '1px solid white';
