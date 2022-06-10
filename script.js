@@ -6,7 +6,7 @@ const paletaDiv = document.querySelector('#color-palette');
 const wite =    'linear-gradient( 102.4deg,  rgba(250,250,250,1) 7.8%,  rgba(24,250,255,1) 100.3% )';
 const bac =     'linear-gradient(31deg, rgba(61,116,180,0.9948354341736695) 12%, rgba(3,21,42,1) 39%, rgba(0,0,0,1) 68%, rgba(0,55,148,0.8715861344537815) 84%)';
 
-function randomColor() {
+const randomColor = () => {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);

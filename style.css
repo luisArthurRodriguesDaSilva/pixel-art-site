@@ -18,10 +18,12 @@ body{
     display:flex ;
     flex-direction: column;
     background-image: var(--back);
-    gap: 3vh;   
+    gap: 4vh;
+    height: 100%;
     background-size: 400% 400%;
     background-repeat: no-repeat;
     animation: gradient 15s ease infinite;
+    margin: auto 0px;
 }
 
 @keyframes gradient {
@@ -69,7 +71,7 @@ header{
     flex-direction: column;
     margin: 0%;
     width: min-content;
-    border: none;
+    border: 1px var(--border);
 }
 
 .pixel {
@@ -118,7 +120,10 @@ header{
     border-radius:5px ;
     height: 5vh;
 }
-
+input{
+    background-color: var(--transparent);
+    max-width: 120px;
+}
 .part button:hover {
     transition: all 0.2s;
     background:rgba(209, 230, 161, 0.486);
