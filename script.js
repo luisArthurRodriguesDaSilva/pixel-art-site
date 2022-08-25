@@ -127,7 +127,7 @@ const changeSizeCanva = (newSize) =>{
 
 const btnVqv = document.querySelector('#generate-board');
 btnVqv.addEventListener('click',()=>{
-    size_of_canva=document.querySelector('#board-size').value;
+    const size_of_canva=document.querySelector('#board-size').value;
     if(size_of_canva == '') alert('Board inválido!');
     changeSizeCanva(size_of_canva);
     for (let k of document.querySelectorAll('.pixel')){
@@ -157,9 +157,6 @@ if (localStorage.getItem('darkmode') == 'null'){
     localStorage.setItem('darkmode',false);
 }
 
-const bode =document.querySelector('body');
-const titl = document.querySelector('#title');
-const btsOnPart = document.querySelectorAll('.part button');
 const darkLight = document.querySelector('#dark-light');
 
 const changeBackgrounds = (gradient) =>{
@@ -169,7 +166,7 @@ const changeBackgrounds = (gradient) =>{
 if(localStorage.getItem('darkmode') == 'true'){
 
     dls.innerText =  'dark_mode';
-    gradient=bac;
+    const gradient=bac;
     dls.style.color = 'white';
     document.documentElement.style.setProperty('--letter',dls.style.color);
 
@@ -185,10 +182,7 @@ else  {
     caixona.style.paddingBottom = 0 + 'px';
 }
 
-const changeDarkLightMode = (e) =>{
-    console.log('passei');
-    
-
+const changeDarkLightMode = () =>{
 
     if(dls.innerText=='dark_mode') {
         dls.innerText= 'light_mode';
@@ -230,11 +224,12 @@ function download(source){
 	el.setAttribute("href", source);
 	el.setAttribute("download", fileName);
 	document.body.appendChild(el);
- 	el.click();
+    el.click();
 	el.remove();
 }
 
 const capture = () =>{
+    // eslint-disable-next-line no-undef
     html2canvas(document.querySelector('#pixel-board')).then(canvas => {
         let imgAdress = canvas.toDataURL("image/jpeg",1.0);
         download(imgAdress);
